@@ -1,1 +1,1 @@
-Adam Koukal 3.A
+# delta-bank-2025-A
