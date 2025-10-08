@@ -1,5 +1,6 @@
 package org.example;
 
+import People.BankAccountOwner;
 import org.example.accounts.BankAccount;
 import org.example.accounts.BaseBankAccount;
 import org.example.accounts.SaveBankAccount;
@@ -10,18 +11,23 @@ import org.example.logger.FileSystemLogger;
 import org.example.logger.Logger;
 import org.example.persons.customers.Customer;
 import org.example.persons.customers.factories.CustomerFactory;
+import serialization.BankAccountOwnerSerialization;
+import serialization.BankAccountOwnerSerializationFactory;
 
 public class App {
 
     Logger logger = new FileSystemLogger();
 
+    BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = new BankAccountOwnerSerializationFactory();
+    BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
     CustomerFactory customerFactory = new CustomerFactory();
     BankAccountService bankAccountService = new BankAccountService();
     BankAccountFactory bankAccountFactory = new BankAccountFactory();
-
     public void run() {
         Customer customer = customerFactory.createCustomer("c-123", "Tomas", "Pesek");
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
+
+        System.out.println(bankAccountOwnerSerializationFactory.serialize(test));
 
         logger.log("=== TEST BANK ACCOUNT");
         BaseBankAccount account1 = testBankAccount(customer);
