@@ -6,15 +6,15 @@ import People.Human;
 public class BankAccountOwnerSerialization extends Human
 {
 
-    private String uUID;
+    private String UUID;
 
-    private String firstName;
+    private String FirstName;
 
-    private String lastName;
+    private String LastName;
 
-    public BankAccountOwnerSerialization(String uUID, String firstName, String lastName)
+    public BankAccountOwnerSerialization(String UUID, String FirstName, String LastName)
     {
-        super(uUID, firstName, lastName);
+        super(UUID, FirstName, LastName);
     }
 
 
