@@ -1,4 +1,4 @@
-package serialization;
+package org.example.serialization;
 
 import com.thoughtworks.xstream.XStream;
 

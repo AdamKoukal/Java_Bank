@@ -1,8 +1,6 @@
-package serialization;
+package org.example.serialization;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSerializer;
-import com.thoughtworks.xstream.XStream;
 
 public class BankAccountOwnerJsonSerializationService implements Serialization
 {

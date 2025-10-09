@@ -1,20 +1,18 @@
 package org.example;
 
-import People.BankAccountOwner;
 import org.example.accounts.BankAccount;
 import org.example.accounts.BaseBankAccount;
 import org.example.accounts.SaveBankAccount;
 import org.example.accounts.factories.BankAccountFactory;
 import org.example.accounts.services.BankAccountService;
-import org.example.logger.ConsoleLogger;
 import org.example.logger.FileSystemLogger;
 import org.example.logger.Logger;
 import org.example.persons.customers.Customer;
 import org.example.persons.customers.factories.CustomerFactory;
-import serialization.BankAccountOwnerSerialization;
-import serialization.BankAccountOwnerSerializationFactory;
-import serialization.BankAccountOwnerXMLSerializationService;
-import serialization.BankAccountOwnerJsonSerializationService;
+import org.example.serialization.BankAccountOwnerSerialization;
+import org.example.serialization.BankAccountOwnerSerializationFactory;
+import org.example.serialization.BankAccountOwnerXMLSerializationService;
+import org.example.serialization.BankAccountOwnerJsonSerializationService;
 
 public class App {
 
