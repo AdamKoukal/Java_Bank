@@ -27,7 +27,7 @@ public class BankAccountOwnerSerializationFactory implements Serialization
         XStream xstream = new XStream();
 
 
-        String string =xstream.toXML(test);
+        String string =xstream.toXML(object);
         /* Object to XML
 
         stringBuilder.append("<BankAccountOwnerSerialization>");
@@ -42,6 +42,7 @@ public class BankAccountOwnerSerializationFactory implements Serialization
         return string;//string/*Builder.toString()*/;
 
     }
+    
 
 
 }
