@@ -13,6 +13,8 @@ import org.example.persons.customers.Customer;
 import org.example.persons.customers.factories.CustomerFactory;
 import serialization.BankAccountOwnerSerialization;
 import serialization.BankAccountOwnerSerializationFactory;
+import serialization.BankAccountOwnerXMLSerializationService;
+import serialization.BankAccountOwnerJsonSerializationService;
 
 public class App {
 
@@ -23,11 +25,15 @@ public class App {
     CustomerFactory customerFactory = new CustomerFactory();
     BankAccountService bankAccountService = new BankAccountService();
     BankAccountFactory bankAccountFactory = new BankAccountFactory();
+    BankAccountOwnerXMLSerializationService bankAccountOwnerXMLSerializationService = new BankAccountOwnerXMLSerializationService();
+    BankAccountOwnerJsonSerializationService bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
+
     public void run() {
         Customer customer = customerFactory.createCustomer("c-123", "Tomas", "Pesek");
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
 
-        System.out.println(bankAccountOwnerSerializationFactory.serialize(test));
+        System.out.println(bankAccountOwnerXMLSerializationService.serialize(test));
+        System.out.println(bankAccountOwnerJsonSerializationService.serialize(test));
 
         logger.log("=== TEST BANK ACCOUNT");
         BaseBankAccount account1 = testBankAccount(customer);

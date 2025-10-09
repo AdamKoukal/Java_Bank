@@ -1,4 +1,4 @@
-package Checks;
+package org.example.Checks;
 
 import java.util.Scanner;
 
