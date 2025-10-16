@@ -26,4 +26,17 @@ public  PaymentCard(String cardNumber, String uuid, String cvv, String pin, Stri
     this.expiryYear = expiryYear;
 
 }
+
+    public String getExpiryMonth() {
+        return expiryMonth;
+    }
+
+    public String getExpiryYear() {
+    return expiryYear;
+    }
+
+    public String getCardUuid() {
+    return uuid;
+    }
 }
+
