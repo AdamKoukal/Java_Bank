@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BankAccountWithPaymentCards extends BaseBankAccount
 {
-    protected final List<PaymentCard> paymentCards;
+    public final List<PaymentCard> paymentCards;
 
     public BankAccountWithPaymentCards(String uuid, String banAccountNumber, Customer customer, double balance){
         super(uuid,banAccountNumber,customer,balance);

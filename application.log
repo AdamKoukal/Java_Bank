@@ -348,3 +348,15 @@
 [FILE] u-123: 0.0
 [FILE] Save
 [FILE] Interest Rate: 5.0
+[FILE] c-123: Tomas Pesek
+[FILE] === TEST BANK ACCOUNT
+[FILE] u-123 (7465690234): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 900.0
+[FILE] Bank
+[FILE] === TEST SAVE ACCOUNT
+[FILE] u-123(2763165076): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 0.0
+[FILE] Save
+[FILE] Interest Rate: 5.0

@@ -1,4 +1,4 @@
-package org.example.Cards;
+package org.example.Cards.Generators;
 
 import java.security.SecureRandom;
 
