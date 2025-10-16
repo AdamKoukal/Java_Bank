@@ -14,8 +14,8 @@ public class PaymentCardService
     public void PaymentCardPay(PaymentCard paymentCard, double amount)
     {
         LocalDateTime date = LocalDateTime.now();
-        if(Integer.parseInt(paymentCard.getExpiryMonth())<date.getMonthValue() &&
-                Integer.parseInt(paymentCard.getExpiryYear())<date.getYear())
+        if(Integer.parseInt(paymentCard.getExpiryMonth())>date.getMonthValue() &&
+                Integer.parseInt(paymentCard.getExpiryYear())>date.getYear())
         {
             if(GetPaymentCardOwner(paymentCard).getBalance()>=amount)
             {
