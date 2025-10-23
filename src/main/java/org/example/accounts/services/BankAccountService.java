@@ -1,6 +1,6 @@
 package org.example.accounts.services;
 
-import org.example.Checks.BankAccountServiceChecker;
+import org.example.checks.BankAccountServiceChecker;
 import org.example.accounts.BaseBankAccount;
 import org.example.logger.ConsoleLogger;
 import org.example.logger.Logger;

@@ -1,9 +1,13 @@
-package org.example.Checks;
+package org.example.checks;
+
+import org.example.logger.ConsoleLogger;
+import org.example.logger.Logger;
 
 import java.util.Scanner;
 
 public class BankAccountServiceChecker {
 
+    private Logger logger = new ConsoleLogger();
     public void NegativeAmountCheck(double amount, String message){
         if (amount <= 0) {
             throw new IllegalArgumentException(message);
@@ -26,7 +30,7 @@ public class BankAccountServiceChecker {
 
         if(MoreMoneyThenCheck(amount,maxAmount)==true)
         {
-            System.out.println("Write the origin of the money");
+            logger.log("Write the origin of the money");
             return (scanner.nextLine());
         }
         else{

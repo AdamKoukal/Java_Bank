@@ -1,12 +1,12 @@
 package org.example.accounts;
 
-import org.example.Cards.PaymentCard;
+import org.example.cards.PaymentCard;
+import org.example.cards.PaymentCardService;
 import org.example.persons.customers.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.Cards.PaymentCardService.CardOwners;
 
 public class BankAccountWithPaymentCards extends BaseBankAccount
 {
@@ -19,13 +19,13 @@ public class BankAccountWithPaymentCards extends BaseBankAccount
         this.paymentCards = new ArrayList<PaymentCard>();
     }
 
-    public void addPaymentCard(PaymentCard paymentCard)
+    public void addPaymentCard(PaymentCard paymentCard, PaymentCardService paymentCardService)
     {
         this.paymentCards.add(paymentCard);
-        CardOwners.put(paymentCard.getCardUuid(),this);
+        paymentCardService.CardOwners.put(paymentCard.getCardUuid(),this);
     }
 
-    public ArrayList<PaymentCard> getPaymentCards(){
+    public List<PaymentCard> getPaymentCards(){
         return new ArrayList<PaymentCard>(this.paymentCards);
     }
 

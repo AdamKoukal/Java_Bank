@@ -1,10 +1,12 @@
 package org.example;
 
-import org.example.accounts.BankAccount;
+import org.example.cards.PaymentCardFactory;
+import org.example.cards.PaymentCardService;
 import org.example.accounts.BaseBankAccount;
-import org.example.accounts.SaveBankAccount;
+import org.example.accounts.StudentBankAccount;
 import org.example.accounts.factories.BankAccountFactory;
 import org.example.accounts.services.BankAccountService;
+import org.example.logger.ConsoleLogger;
 import org.example.logger.FileSystemLogger;
 import org.example.logger.Logger;
 import org.example.persons.customers.Customer;
@@ -14,9 +16,11 @@ import org.example.serialization.BankAccountOwnerSerializationFactory;
 import org.example.serialization.BankAccountOwnerXMLSerializationService;
 import org.example.serialization.BankAccountOwnerJsonSerializationService;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
+
 public class App {
 
-    Logger logger = new FileSystemLogger();
+    Logger logger = new ConsoleLogger();
 
     BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = new BankAccountOwnerSerializationFactory();
     BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
@@ -25,13 +29,32 @@ public class App {
     BankAccountFactory bankAccountFactory = new BankAccountFactory();
     BankAccountOwnerXMLSerializationService bankAccountOwnerXMLSerializationService = new BankAccountOwnerXMLSerializationService();
     BankAccountOwnerJsonSerializationService bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
-
+    PaymentCardService  paymentCardService = new PaymentCardService();
+    PaymentCardFactory paymentCardFactory = new PaymentCardFactory();
     public void run() {
         Customer customer = customerFactory.createCustomer("c-123", "Tomas", "Pesek");
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
 
-        System.out.println(bankAccountOwnerXMLSerializationService.serialize(test));
-        System.out.println(bankAccountOwnerJsonSerializationService.serialize(test));
+        StudentBankAccount StudentBankAccountTest=bankAccountFactory.createStudentAccount(customer.getUuid(),customer,"Delta SŠ");
+
+        StudentBankAccountTest.addPaymentCard(paymentCardFactory.create(),paymentCardService);
+
+        logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
+        StudentBankAccountTest.setBalance(500);
+        logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
+
+
+        paymentCardService.PaymentCardPay(StudentBankAccountTest.getPaymentCards().get(0),100);
+
+        //logger.log(paymentCardService.GetPaymentCardOwner(StudentBankAccountTest.getPaymentCards().get(0)).toString());
+        logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
+
+
+
+
+
+        /*logger.log(bankAccountOwnerXMLSerializationService.serialize(test));
+        logger.log(bankAccountOwnerJsonSerializationService.serialize(test));
 
         logger.log("=== TEST BANK ACCOUNT");
         BaseBankAccount account1 = testBankAccount(customer);
@@ -45,7 +68,7 @@ public class App {
         if (account2 instanceof SaveBankAccount) {
             float interestRate = ((SaveBankAccount)account2).getInterestRate();
             logger.log("Interest Rate: " + interestRate);
-        }
+        }*/
     }
 
     private BaseBankAccount testSaveAccount(Customer customer) {

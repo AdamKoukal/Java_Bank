@@ -1,4 +1,4 @@
-package org.example.Cards;
+package org.example.cards;
 
 public class PaymentCard
 {

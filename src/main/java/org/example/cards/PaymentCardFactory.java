@@ -1,9 +1,9 @@
-package org.example.Cards;
+package org.example.cards;
 
-import org.example.Cards.Generators.PaymentCardCvvGenerator;
-import org.example.Cards.Generators.PaymentCardExpirationCalculator;
-import org.example.Cards.Generators.PaymentCardNumberGenerator;
-import org.example.Cards.Generators.PaymentCardPinGenerator;
+import org.example.cards.generators.PaymentCardCvvGenerator;
+import org.example.cards.generators.PaymentCardExpirationCalculator;
+import org.example.cards.generators.PaymentCardNumberGenerator;
+import org.example.cards.generators.PaymentCardPinGenerator;
 
 import java.util.UUID;
 

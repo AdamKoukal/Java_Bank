@@ -384,3 +384,74 @@
 [FILE] u-123: 0.0
 [FILE] Save
 [FILE] Interest Rate: 5.0
+[FILE] c-123: Tomas Pesek
+[FILE] === TEST BANK ACCOUNT
+[FILE] u-123 (0359373989): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 900.0
+[FILE] Bank
+[FILE] === TEST SAVE ACCOUNT
+[FILE] u-123(1881082662): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 0.0
+[FILE] Save
+[FILE] Interest Rate: 5.0
+[FILE] c-123: Tomas Pesek
+[FILE] === TEST BANK ACCOUNT
+[FILE] u-123 (3867487230): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 900.0
+[FILE] Bank
+[FILE] === TEST SAVE ACCOUNT
+[FILE] u-123(7992934101): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 0.0
+[FILE] Save
+[FILE] Interest Rate: 5.0
+[FILE] c-123: Tomas Pesek
+[FILE] === TEST BANK ACCOUNT
+[FILE] u-123 (1636659563): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 900.0
+[FILE] Bank
+[FILE] === TEST SAVE ACCOUNT
+[FILE] u-123(0254931025): 0.0
+[FILE] u-123: 500.0
+[FILE] u-123: 0.0
+[FILE] Save
+[FILE] Interest Rate: 5.0
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] c-123: Tomas Pesek
+[FILE] Test1 Balance: 0.0
+[FILE] Test1 Balance: 500.0
+[FILE] org.example.accounts.StudentBankAccount@7e774085
+[FILE] Test1 Balance: 400.0
+[FILE] c-123: Tomas Pesek
+[FILE] Test1 Balance: 0.0
+[FILE] Test1 Balance: 500.0
+[FILE] org.example.accounts.StudentBankAccount@7e774085
+[FILE] Test1 Balance: 400.0
+[FILE] test
