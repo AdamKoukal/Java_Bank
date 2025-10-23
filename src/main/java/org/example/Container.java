@@ -14,6 +14,7 @@ import org.example.persons.customers.factories.CustomerFactory;
 import org.example.serialization.BankAccountOwnerJsonSerializationService;
 import org.example.serialization.BankAccountOwnerSerializationFactory;
 import org.example.serialization.BankAccountOwnerXMLSerializationService;
+import org.example.serialization.Serialization;
 
 public class Container
 {   //Cards
@@ -45,9 +46,9 @@ public class Container
 
     public BankAccountOwnerSerializationFactory  bankAccountOwnerSerializationFactory;
 
-    public BankAccountOwnerJsonSerializationService bankAccountOwnerJsonSerializationService;
+    public Serialization bankAccountOwnerJsonSerializationService;
 
-    public BankAccountOwnerXMLSerializationService bankAccountOwnerXMLSerializationService;
+    public Serialization bankAccountOwnerXMLSerializationService;
 
     public Container()
     {

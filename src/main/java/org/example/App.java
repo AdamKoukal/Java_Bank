@@ -12,10 +12,7 @@ import org.example.logger.FileSystemLogger;
 import org.example.logger.Logger;
 import org.example.persons.customers.Customer;
 import org.example.persons.customers.factories.CustomerFactory;
-import org.example.serialization.BankAccountOwnerSerialization;
-import org.example.serialization.BankAccountOwnerSerializationFactory;
-import org.example.serialization.BankAccountOwnerXMLSerializationService;
-import org.example.serialization.BankAccountOwnerJsonSerializationService;
+import org.example.serialization.*;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
 
@@ -37,9 +34,9 @@ public class App {
 
     BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
 
-    BankAccountOwnerXMLSerializationService bankAccountOwnerXMLSerializationService = container.bankAccountOwnerXMLSerializationService;
+    Serialization bankAccountOwnerXMLSerializationService = container.bankAccountOwnerXMLSerializationService;
 
-    BankAccountOwnerJsonSerializationService bankAccountOwnerJsonSerializationService = container.bankAccountOwnerJsonSerializationService;
+    Serialization bankAccountOwnerJsonSerializationService = container.bankAccountOwnerJsonSerializationService;
 
 
     public void run() {
