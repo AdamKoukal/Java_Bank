@@ -6,6 +6,7 @@ import org.example.accounts.BaseBankAccount;
 import org.example.accounts.StudentBankAccount;
 import org.example.accounts.factories.BankAccountFactory;
 import org.example.accounts.services.BankAccountService;
+import org.example.cards.generators.PaymentCardNumberGenerator;
 import org.example.logger.ConsoleLogger;
 import org.example.logger.FileSystemLogger;
 import org.example.logger.Logger;
@@ -22,15 +23,25 @@ public class App {
 
     Logger logger = new ConsoleLogger();
 
-    BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = new BankAccountOwnerSerializationFactory();
+    Container container=new Container();
+
+    PaymentCardService  paymentCardService = container.paymentCardService;
+    PaymentCardFactory paymentCardFactory = container.paymentCardFactory;
+
+    CustomerFactory customerFactory = container.customerFactory;
+
+    BankAccountService bankAccountService = container.bankAccountService;
+    BankAccountFactory bankAccountFactory = container.bankAccountFactory;
+
+    BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = container.bankAccountOwnerSerializationFactory;
+
     BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
-    CustomerFactory customerFactory = new CustomerFactory();
-    BankAccountService bankAccountService = new BankAccountService();
-    BankAccountFactory bankAccountFactory = new BankAccountFactory();
-    BankAccountOwnerXMLSerializationService bankAccountOwnerXMLSerializationService = new BankAccountOwnerXMLSerializationService();
-    BankAccountOwnerJsonSerializationService bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
-    PaymentCardService  paymentCardService = new PaymentCardService();
-    PaymentCardFactory paymentCardFactory = new PaymentCardFactory();
+
+    BankAccountOwnerXMLSerializationService bankAccountOwnerXMLSerializationService = container.bankAccountOwnerXMLSerializationService;
+
+    BankAccountOwnerJsonSerializationService bankAccountOwnerJsonSerializationService = container.bankAccountOwnerJsonSerializationService;
+
+
     public void run() {
         Customer customer = customerFactory.createCustomer("c-123", "Tomas", "Pesek");
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());

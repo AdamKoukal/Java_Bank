@@ -9,10 +9,26 @@ import java.util.UUID;
 
 public class PaymentCardFactory
 {
-    private PaymentCardNumberGenerator paymentCardNumberGenerator= new PaymentCardNumberGenerator();
-    private PaymentCardCvvGenerator paymentCardCvvGenerator= new PaymentCardCvvGenerator();
-    private PaymentCardPinGenerator paymentCardPinGenerator= new PaymentCardPinGenerator();
-    private PaymentCardExpirationCalculator paymentCardExpirationGenerator= new PaymentCardExpirationCalculator();
+    private PaymentCardNumberGenerator paymentCardNumberGenerator;
+    private PaymentCardCvvGenerator paymentCardCvvGenerator;
+    private PaymentCardPinGenerator paymentCardPinGenerator;
+    private PaymentCardExpirationCalculator paymentCardExpirationGenerator;
+
+    public PaymentCardFactory(
+                              PaymentCardNumberGenerator paymentCardNumberGenerator,
+                              PaymentCardCvvGenerator paymentCardCvvGenerator,
+                              PaymentCardPinGenerator paymentCardPinGenerator,
+                              PaymentCardExpirationCalculator paymentCardExpirationGenerator
+
+                             )
+    {
+        this.paymentCardNumberGenerator = paymentCardNumberGenerator;
+        this.paymentCardCvvGenerator = paymentCardCvvGenerator;
+        this.paymentCardPinGenerator = paymentCardPinGenerator;
+        this.paymentCardExpirationGenerator = paymentCardExpirationGenerator;
+    }
+
+
 
     public PaymentCard create()
     {
