@@ -9,14 +9,13 @@ import org.example.cards.generators.PaymentCardCvvGenerator;
 import org.example.cards.generators.PaymentCardExpirationCalculator;
 import org.example.cards.generators.PaymentCardNumberGenerator;
 import org.example.cards.generators.PaymentCardPinGenerator;
-import org.example.persons.customers.Customer;
 import org.example.persons.customers.factories.CustomerFactory;
 import org.example.serialization.BankAccountOwnerJsonSerializationService;
 import org.example.serialization.BankAccountOwnerSerializationFactory;
 import org.example.serialization.BankAccountOwnerXMLSerializationService;
 import org.example.serialization.Serialization;
 
-public class Container
+public class UnchangedContainer
 {   //Cards
     public PaymentCardFactory paymentCardFactory;
 
@@ -50,11 +49,11 @@ public class Container
 
     public Serialization bankAccountOwnerXMLSerializationService;
 
-    public Container()
+    public UnchangedContainer()
     {
 
         //Cards
-        //this.paymentCardService=new PaymentCardService();
+        this.paymentCardService=new PaymentCardService();
 
         this.paymentCardNumberGenerator=new PaymentCardNumberGenerator();
 
@@ -80,7 +79,7 @@ public class Container
         //BankAccount
 
         this.bankAccountFactory=new BankAccountFactory();
-        //this.bankAccountService=new BankAccountService();
+        this.bankAccountService=new BankAccountService();
         this.bankAccountNumberGenerator=new BankAccountNumberGenerator();
 
         //Serialization

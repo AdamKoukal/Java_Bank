@@ -1,5 +1,7 @@
 package org.example;
 
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import org.example.cards.PaymentCardFactory;
 import org.example.cards.PaymentCardService;
 import org.example.accounts.BaseBankAccount;
@@ -22,21 +24,39 @@ public class App {
 
     Container container=new Container();
 
-    PaymentCardService  paymentCardService = container.paymentCardService;
+    @Inject
+    PaymentCardService  paymentCardService;
+    //PaymentCardService  paymentCardService = container.paymentCardService;
+
     PaymentCardFactory paymentCardFactory = container.paymentCardFactory;
+    //PaymentCardFactory paymentCardFactory = container.paymentCardFactory;
+    @Inject
+    CustomerFactory customerFactory;
+    //CustomerFactory customerFactory = container.customerFactory;
 
-    CustomerFactory customerFactory = container.customerFactory;
+    @Inject
+    BankAccountService bankAccountService;
+    //BankAccountService bankAccountService = container.bankAccountService;
 
-    BankAccountService bankAccountService = container.bankAccountService;
-    BankAccountFactory bankAccountFactory = container.bankAccountFactory;
+    @Inject
+    BankAccountFactory bankAccountFactory;
+    //BankAccountFactory bankAccountFactory = container.bankAccountFactory;
 
+    //@Inject
+    //BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory;
     BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = container.bankAccountOwnerSerializationFactory;
 
     BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
 
-    Serialization bankAccountOwnerXMLSerializationService = container.bankAccountOwnerXMLSerializationService;
+    @Inject
+    @Named("XML")
+    Serialization bankAccountOwnerXMLSerializationService;
+    //Serialization bankAccountOwnerXMLSerializationService = container.bankAccountOwnerXMLSerializationService;
 
-    Serialization bankAccountOwnerJsonSerializationService = container.bankAccountOwnerJsonSerializationService;
+    @Inject
+    @Named("Json")
+    Serialization bankAccountOwnerJsonSerializationService;
+    //Serialization bankAccountOwnerJsonSerializationService = container.bankAccountOwnerJsonSerializationService;
 
 
     public void run() {
