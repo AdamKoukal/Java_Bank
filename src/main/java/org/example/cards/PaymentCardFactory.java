@@ -1,5 +1,6 @@
 package org.example.cards;
 
+import com.google.inject.Inject;
 import org.example.cards.generators.PaymentCardCvvGenerator;
 import org.example.cards.generators.PaymentCardExpirationCalculator;
 import org.example.cards.generators.PaymentCardNumberGenerator;
@@ -9,24 +10,15 @@ import java.util.UUID;
 
 public class PaymentCardFactory
 {
+    @Inject
     private PaymentCardNumberGenerator paymentCardNumberGenerator;
+    @Inject
     private PaymentCardCvvGenerator paymentCardCvvGenerator;
+    @Inject
     private PaymentCardPinGenerator paymentCardPinGenerator;
+    @Inject
     private PaymentCardExpirationCalculator paymentCardExpirationGenerator;
 
-    public PaymentCardFactory(
-                              PaymentCardNumberGenerator paymentCardNumberGenerator,
-                              PaymentCardCvvGenerator paymentCardCvvGenerator,
-                              PaymentCardPinGenerator paymentCardPinGenerator,
-                              PaymentCardExpirationCalculator paymentCardExpirationGenerator
-
-                             )
-    {
-        this.paymentCardNumberGenerator = paymentCardNumberGenerator;
-        this.paymentCardCvvGenerator = paymentCardCvvGenerator;
-        this.paymentCardPinGenerator = paymentCardPinGenerator;
-        this.paymentCardExpirationGenerator = paymentCardExpirationGenerator;
-    }
 
 
 

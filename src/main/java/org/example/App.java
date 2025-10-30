@@ -22,13 +22,14 @@ public class App {
 
     Logger logger = new ConsoleLogger();
 
-    Container container=new Container();
+    //Container container=new Container();
 
     @Inject
     PaymentCardService  paymentCardService;
     //PaymentCardService  paymentCardService = container.paymentCardService;
 
-    PaymentCardFactory paymentCardFactory = container.paymentCardFactory;
+    @Inject
+    PaymentCardFactory paymentCardFactory;
     //PaymentCardFactory paymentCardFactory = container.paymentCardFactory;
     @Inject
     CustomerFactory customerFactory;
@@ -42,11 +43,10 @@ public class App {
     BankAccountFactory bankAccountFactory;
     //BankAccountFactory bankAccountFactory = container.bankAccountFactory;
 
-    //@Inject
-    //BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory;
-    BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = container.bankAccountOwnerSerializationFactory;
+    @Inject
+    BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory;
+    //BankAccountOwnerSerializationFactory bankAccountOwnerSerializationFactory = container.bankAccountOwnerSerializationFactory;
 
-    BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
 
     @Inject
     @Named("XML")
@@ -60,6 +60,10 @@ public class App {
 
 
     public void run() {
+
+        BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
+
+
         Customer customer = customerFactory.createCustomer("c-123", "Tomas", "Pesek");
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
 
