@@ -24,7 +24,7 @@ public class SaveBankAccount extends BaseBankAccount {
     }
 
     public void setNextInterestDate(LocalDate nextInterestDate) {
-        nextInterestDate=nextInterestDate;
+        this.nextInterestDate=nextInterestDate;
     }
 
     public LocalDate getNextInterestDate() {

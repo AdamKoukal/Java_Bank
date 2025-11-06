@@ -87,19 +87,19 @@ public class App {
 
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
 
-        StudentBankAccount StudentBankAccountTest=bankAccountFactory.createStudentAccount(customer.getUuid(),customer,"Delta SŠ");
+        //StudentBankAccount StudentBankAccountTest=bankAccountFactory.createStudentAccount(customer.getUuid(),customer,"Delta SŠ");
 
-        StudentBankAccountTest.addPaymentCard(paymentCardFactory.create(),paymentCardService);
+        //StudentBankAccountTest.addPaymentCard(paymentCardFactory.create(),paymentCardService);
 
-        logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
-        StudentBankAccountTest.setBalance(500);
-        logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
+        //logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
+        //StudentBankAccountTest.setBalance(500);
+        //logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
 
 
-        paymentCardService.PaymentCardPay(StudentBankAccountTest.getPaymentCards().get(0),100);
+        //paymentCardService.PaymentCardPay(StudentBankAccountTest.getPaymentCards().get(0),100);
 
         //logger.log(paymentCardService.GetPaymentCardOwner(StudentBankAccountTest.getPaymentCards().get(0)).toString());
-        logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
+        //logger.log("Test1 Balance: "+StudentBankAccountTest.getBalance());
 
 
 

@@ -28,16 +28,14 @@ public class InterestAccountsFacade extends Thread
             {
 
                 if(bankAccountService.BankAccounts.get(i) instanceof SaveBankAccount
-                        && ((SaveBankAccount) bankAccountService.BankAccounts.get(i)).getNextInterestDate()==LocalDate.parse("2000-01-01"))
+                        && (((SaveBankAccount) bankAccountService.BankAccounts.get(i)).getNextInterestDate()).toString().equals("2000-01-01"))
                 {
-                    System.out.println("c");
+                    System.out.println((((SaveBankAccount) bankAccountService.BankAccounts.get(i)).getNextInterestDate()).toString());
                     bankAccountService.BankAccounts.get(i).setBalance(interestService.calculateInterest(bankAccountService.BankAccounts.get(i).getBalance(),(SaveBankAccount)bankAccountService.BankAccounts.get(i)));
                     System.out.println(bankAccountService.BankAccounts.get(i).getBalance());
                 }
-                else if(bankAccountService.BankAccounts.get(i) instanceof SaveBankAccount){
-                    System.out.println(((SaveBankAccount) bankAccountService.BankAccounts.get(i)).getNextInterestDate()==LocalDate.parse("2000-01-01"));
-                    System.out.println("ne c");
-                }
+
+
 
 
             }
