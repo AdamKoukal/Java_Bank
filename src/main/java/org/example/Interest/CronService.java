@@ -10,7 +10,7 @@ public class CronService
     private InterestAccountsFacade interestAccountsFacade;
 
     public void run(){
-        Thread Cron = new Thread(() -> interestAccountsFacade.run());
+        Thread Cron = new Thread(interestAccountsFacade);
         Cron.start();
     }
 

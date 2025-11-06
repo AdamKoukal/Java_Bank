@@ -82,6 +82,7 @@ public class App {
 
         SaveBankAccount saveBankAccount = bankAccountFactory.createSaveAccount("a",customer,5, LocalDate.parse("2000-01-01"),100);
         System.out.println(bankAccountService.BankAccounts.size());
+        System.out.println(saveBankAccount.getNextInterestDate());
 
 
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
