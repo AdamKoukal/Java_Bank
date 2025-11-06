@@ -2,6 +2,9 @@ package org.example;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
+import org.example.Interest.CronService;
+import org.example.Interest.InterestAccountsFacade;
+import org.example.accounts.SaveBankAccount;
 import org.example.cards.PaymentCardFactory;
 import org.example.cards.PaymentCardService;
 import org.example.accounts.BaseBankAccount;
@@ -17,6 +20,8 @@ import org.example.persons.customers.factories.CustomerFactory;
 import org.example.serialization.*;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class App {
 
@@ -58,13 +63,27 @@ public class App {
     Serialization bankAccountOwnerJsonSerializationService;
     //Serialization bankAccountOwnerJsonSerializationService = container.bankAccountOwnerJsonSerializationService;
 
+    @Inject
+    InterestAccountsFacade interestAccountsFacade;
+
+    @Inject
+    CronService cronService;
+
+
+
 
     public void run() {
 
+        cronService.run();
         BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
 
 
         Customer customer = customerFactory.createCustomer("c-123", "Tomas", "Pesek");
+
+        SaveBankAccount saveBankAccount = bankAccountFactory.createSaveAccount("a",customer,5, LocalDate.parse("2000-01-01"),100);
+        System.out.println(bankAccountService.BankAccounts.size());
+
+
         logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
 
         StudentBankAccount StudentBankAccountTest=bankAccountFactory.createStudentAccount(customer.getUuid(),customer,"Delta SŠ");
@@ -107,7 +126,8 @@ public class App {
         BaseBankAccount account = bankAccountFactory.createSaveAccount(
                 "u-123",
                 customer,
-                5
+                5,LocalDate.parse("2000-01-01"),
+                100
         );
 
         try{

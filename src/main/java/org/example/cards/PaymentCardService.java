@@ -1,5 +1,6 @@
 package org.example.cards;
 
+import com.google.inject.Singleton;
 import org.example.accounts.BankAccountWithPaymentCards;
 import org.example.logger.ConsoleLogger;
 import org.example.logger.Logger;
@@ -8,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+@Singleton
 public class PaymentCardService
 {
     public Map<String, BankAccountWithPaymentCards> CardOwners = new HashMap<String, BankAccountWithPaymentCards>();
