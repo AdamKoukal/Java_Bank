@@ -10,6 +10,6 @@ public class InterestService
     {
         saveBankAccount.setNextInterestDate(saveBankAccount.getNextInterestDate().plusMonths(1));
         System.out.println(saveBankAccount.getNextInterestDate());
-        return money*1.005;
+        return money*(1+(saveBankAccount.getInterestRate()*0.01));
     }
 }
