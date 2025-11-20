@@ -1,8 +1,7 @@
-package org.example.Transactions;
+package org.example.transactions;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import org.example.Interest.InterestAccountsFacade;
 
 @Singleton
 public class TransactionCronService

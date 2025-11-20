@@ -1,4 +1,4 @@
-package org.example.Transactions;
+package org.example.transactions;
 
 import com.google.gson.Gson;
 import com.google.inject.Inject;
@@ -9,7 +9,6 @@ import org.example.logger.Logger;
 import org.example.serialization.Serialization;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;

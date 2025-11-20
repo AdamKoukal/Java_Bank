@@ -1,17 +1,13 @@
 package org.example.accounts.services;
 
 import com.google.inject.Singleton;
-import org.example.Transactions.Transaction;
-import org.example.accounts.BankAccount;
-import org.example.accounts.BankAccountWithPaymentCards;
+import org.example.transactions.Transaction;
 import org.example.checks.BankAccountServiceChecker;
 import org.example.accounts.BaseBankAccount;
 import org.example.logger.ConsoleLogger;
 import org.example.logger.Logger;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 @Singleton
 public class BankAccountService {

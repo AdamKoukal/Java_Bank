@@ -1,9 +1,6 @@
-package org.example.Transactions;
+package org.example.transactions;
 
 import org.example.accounts.BaseBankAccount;
-
-import java.time.LocalDate;
-import java.util.Date;
 
 public class Transaction
 {

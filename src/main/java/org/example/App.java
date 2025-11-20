@@ -4,26 +4,20 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import org.example.Interest.CronService;
 import org.example.Interest.InterestAccountsFacade;
-import org.example.Transactions.*;
+import org.example.transactions.*;
 import org.example.accounts.BankAccount;
-import org.example.accounts.SaveBankAccount;
 import org.example.cards.PaymentCardFactory;
 import org.example.cards.PaymentCardService;
 import org.example.accounts.BaseBankAccount;
-import org.example.accounts.StudentBankAccount;
 import org.example.accounts.factories.BankAccountFactory;
 import org.example.accounts.services.BankAccountService;
-import org.example.cards.generators.PaymentCardNumberGenerator;
 import org.example.logger.ConsoleLogger;
-import org.example.logger.FileSystemLogger;
 import org.example.logger.Logger;
 import org.example.persons.customers.Customer;
 import org.example.persons.customers.factories.CustomerFactory;
 import org.example.serialization.*;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class App {
 
