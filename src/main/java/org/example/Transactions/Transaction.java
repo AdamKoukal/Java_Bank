@@ -7,24 +7,47 @@ import java.util.Date;
 
 public class Transaction
 {
-    int ID;
+    private int ID;
 
-    LocalDate TransactionDate;
+    private String TransactionDate;
 
-    BaseBankAccount Sender;
+    private BaseBankAccount Sender;
 
-    BaseBankAccount Receiver;
+    private BaseBankAccount Receiver;
 
-    Double Amount;
+    private Double Amount;
 
-    String TransactionType;
+    private String TransactionType;
 
-    public Transaction(int ID, LocalDate TransactionDate, BaseBankAccount Sender, BaseBankAccount Receiver, Double Amount, String TransactionType){
+    public Transaction(int ID, String TransactionDate, BaseBankAccount Sender, BaseBankAccount Receiver, Double Amount, String TransactionType){
         this.ID = ID;
         this.TransactionDate = TransactionDate;
         this.Sender = Sender;
         this.Receiver = Receiver;
         this.Amount = Amount;
         this.TransactionType = TransactionType;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public String getTransactionDate() {
+        return TransactionDate;
+    }
+
+    public BaseBankAccount getSender() {
+        return Sender;
+    }
+
+    public BaseBankAccount getReceiver() {
+        return Receiver;
+    }
+
+    public Double getAmount() {
+        return Amount;
+    }
+    public String getTransactionType() {
+        return TransactionType;
     }
 }

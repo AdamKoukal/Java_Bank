@@ -1,6 +1,7 @@
 package org.example.accounts.services;
 
 import com.google.inject.Singleton;
+import org.example.Transactions.Transaction;
 import org.example.accounts.BankAccount;
 import org.example.accounts.BankAccountWithPaymentCards;
 import org.example.checks.BankAccountServiceChecker;
@@ -59,5 +60,19 @@ public class BankAccountService {
 
         double newBalance = account.getBalance() - amount;
         account.setBalance(newBalance);
+    }
+
+    public void executeTransaction(Transaction transaction, ArrayList<Transaction> transactions)
+    {
+        double transactionAmount = transaction.getAmount();
+
+        BaseBankAccount sender = transaction.getSender();
+        BaseBankAccount receiver = transaction.getReceiver();
+
+        this.withdraw(sender,transactionAmount);
+        this.deposit(receiver,transactionAmount);
+
+        transactions.add(transaction);
+
     }
 }

@@ -4,6 +4,8 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import org.example.Interest.CronService;
 import org.example.Interest.InterestAccountsFacade;
+import org.example.Transactions.*;
+import org.example.accounts.BankAccount;
 import org.example.accounts.SaveBankAccount;
 import org.example.cards.PaymentCardFactory;
 import org.example.cards.PaymentCardService;
@@ -70,11 +72,39 @@ public class App {
     CronService cronService;
 
 
+    @Inject
+    TransactionManager transactionManager;
+
+    @Inject
+    TransactionCronService transactionCronService;
+
+    @Inject
+    TransactionFactory transactionFactory;
+
+    @Inject
+    TransactionFacade transactionFacade;
+
 
 
     public void run() {
 
-        cronService.run();
+        transactionCronService.run();
+
+        Customer customer1=customerFactory.createCustomer("1","Martin","Tesák");
+        Customer customer2=customerFactory.createCustomer("2","Pavel","Ovocný");
+
+        BankAccount bankAccount1=bankAccountFactory.createBankAccount("1",customer1);
+        bankAccount1.setBalance(200);
+        BankAccount bankAccount2=bankAccountFactory.createBankAccount("2",customer2);
+        bankAccount2.setBalance(200);
+
+        Transaction transaction=transactionFactory.createTransaction(1,"2025-11-20", bankAccount1, bankAccount2, 100.0, "Online transaction");
+        bankAccountService.executeTransaction(transaction,transactionManager.transactions);
+
+        logger.log("BA1B: "+bankAccount1.getBalance());
+        logger.log("BA2B: "+bankAccount2.getBalance());
+
+        /*cronService.run();
         BankAccountOwnerSerialization test= bankAccountOwnerSerializationFactory.createBankAccountOwnerSerialization("1","1","1");
 
 
@@ -85,7 +115,7 @@ public class App {
         System.out.println(saveBankAccount.getNextInterestDate());
 
 
-        logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());
+        logger.log(customer.getUuid() + ": " + customer.getFirstName() + " " + customer.getLastName());*/
 
         //StudentBankAccount StudentBankAccountTest=bankAccountFactory.createStudentAccount(customer.getUuid(),customer,"Delta SŠ");
 
